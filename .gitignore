@@ -1,16 +1,18 @@
-# Environnement virtuel Python
+cat > .gitignore << 'EOF'
+# Python virtual environment
 .venv/
 
-# Caches Python
+# Python caches
 __pycache__/
 *.pyc
 
-# Secrets / variables d'environnement
+# Secrets / environment variables
 .env
 
-# Fichiers système macOS
+# macOS system files
 .DS_Store
 
-# Dossiers d'éditeurs
+# Editor folders
 .vscode/
 .idea/
+EOF
