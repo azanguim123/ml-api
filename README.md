@@ -78,7 +78,7 @@ ml-api/
 ## Roadmap
 
 - [x] Step 1 — FastAPI app with `/health` and `/predict`
-- [ ] Step 2 — Real sentiment model (Hugging Face Transformers)
+- [x] Step 2 — Real sentiment model (Hugging Face Transformers)
 - [ ] Step 3 — Dockerize the API
 - [ ] Step 4 — `docker-compose` with PostgreSQL
 - [ ] Step 5 — Deploy on Kubernetes (kind/minikube + Helm)
