@@ -15,4 +15,7 @@ __pycache__/
 # Editor folders
 .vscode/
 .idea/
+
+#Trained ML models
+*.joblib
 EOF
