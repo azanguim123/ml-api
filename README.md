@@ -16,37 +16,37 @@ deployment workflow, step by step:
 - **FastAPI** — web framework
 - **Uvicorn** — ASGI server
 - **Pydantic** — request/response validation
-- _Coming next:_ Hugging Face Transformers, Docker, PostgreSQL, Kubernetes, Terraform, AWS/Azure
+- *Coming next:* Hugging Face Transformers, Docker, PostgreSQL, Kubernetes, Terraform, AWS/Azure
 
 ## Endpoints
 
-| Method | Path       | Description                                   |
-| ------ | ---------- | --------------------------------------------- |
-| GET    | `/health`  | Health check, returns `{"status": "ok"}`      |
-| POST   | `/predict` | Predicts the sentiment of a given text        |
-| GET    | `/docs`    | Auto-generated interactive API documentation  |
+|Method|Path      |Description                                 |
+|------|----------|--------------------------------------------|
+|GET   |`/health` |Health check, returns `{"status": "ok"}`    |
+|POST  |`/predict`|Predicts the sentiment of a given text      |
+|GET   |`/docs`   |Auto-generated interactive API documentation|
 
 ### Example
 
-​```bash
+```bash
 curl -X POST http://127.0.0.1:8000/predict \
   -H "Content-Type: application/json" \
   -d '{"text": "I love this!"}'
-​```
+```
 
 Response:
 
-​```json
+```json
 { "label": "positive", "score": 0.99 }
-​```
+```
 
 ## Run locally
 
 Requirements: Python 3.13+, [Colima](https://github.com/abiosoft/colima) (for the Docker step, later).
 
-​```bash
+```bash
 # Clone the repo
-git clone https://github.com/<your-username>/ml-api.git
+git clone https://github.com/azanguim123/ml-api.git
 cd ml-api
 
 # Create and activate a virtual environment
@@ -58,14 +58,14 @@ pip install -r requirements.txt
 
 # Run the API
 python -m uvicorn app.main:app --reload
-​```
+```
 
 The API will be available at `http://127.0.0.1:8000`.
 Interactive docs: `http://127.0.0.1:8000/docs`.
 
 ## Project structure
 
-​```
+```
 ml-api/
 ├── app/
 │   ├── __init__.py
@@ -73,7 +73,7 @@ ml-api/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-​```
+```
 
 ## Roadmap
 
