@@ -8,7 +8,7 @@ deployment workflow, step by step:
 
 ## Status
 
-🚧 Work in progress. Currently at step 1: building the API locally.
+🚧 Work in progress. Step 1(local FastAPI + ML model) complete - moving on to containerization with Docker. 
 
 ## Tech stack
 
@@ -16,7 +16,8 @@ deployment workflow, step by step:
 - **FastAPI** — web framework
 - **Uvicorn** — ASGI server
 - **Pydantic** — request/response validation
-- *Coming next:* Hugging Face Transformers, Docker, PostgreSQL, Kubernetes, Terraform, AWS/Azure
+- **scikit-learn** - sentiment cliassification model(TF-IDF + Logistic Regression)
+- *Coming next:_ Hugging Face Transformers(via Docker), Docker, PostgreSQL, Kubernetes, Terraform, AWS/Azure
 
 ## Endpoints
 
@@ -78,7 +79,7 @@ ml-api/
 ## Roadmap
 
 - [x] Step 1 — FastAPI app with `/health` and `/predict`
-- [x] Step 2 — Real sentiment model (Hugging Face Transformers)
+- [x] Step 2 — Real sentiment model (scikit-learn)
 - [ ] Step 3 — Dockerize the API
 - [ ] Step 4 — `docker-compose` with PostgreSQL
 - [ ] Step 5 — Deploy on Kubernetes (kind/minikube + Helm)
