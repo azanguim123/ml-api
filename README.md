@@ -8,7 +8,7 @@ deployment workflow, step by step:
 
 ## Status
 
-🚧 Work in progress. Step 1(local FastAPI + ML model) complete - moving on to containerization with Docker. 
+🚧 Work in progress. API containerized with Docker  - moving on to docker-compose with PostgreSQL. 
 
 ## Tech stack
 
@@ -17,7 +17,8 @@ deployment workflow, step by step:
 - **Uvicorn** — ASGI server
 - **Pydantic** — request/response validation
 - **scikit-learn** - sentiment cliassification model(TF-IDF + Logistic Regression)
-- *Coming next:_ Hugging Face Transformers(via Docker), Docker, PostgreSQL, Kubernetes, Terraform, AWS/Azure
+- **Docker** - containerization
+- _Coming next:_ Hugging Face Transformers(via Docker), docker-compose, PostgreSQL, Kubernetes, Terraform, AWS/Azure
 
 ## Endpoints
 
@@ -64,6 +65,16 @@ python -m uvicorn app.main:app --reload
 The API will be available at `http://127.0.0.1:8000`.
 Interactive docs: `http://127.0.0.1:8000/docs`.
 
+
+## Run with Docker
+
+```bash
+docker build -t ml-api:v1 .
+docker run -d -p 8000:8000 --name ml-api-container ml-api:v1
+```
+
+The API will be available at `http://127.0.0.1:8000`.
+
 ## Project structure
 
 ```
@@ -80,7 +91,7 @@ ml-api/
 
 - [x] Step 1 — FastAPI app with `/health` and `/predict`
 - [x] Step 2 — Real sentiment model (scikit-learn)
-- [ ] Step 3 — Dockerize the API
+- [x] Step 3 — Dockerize the API
 - [ ] Step 4 — `docker-compose` with PostgreSQL
 - [ ] Step 5 — Deploy on Kubernetes (kind/minikube + Helm)
 - [ ] Step 6 — Infrastructure as Code with Terraform
