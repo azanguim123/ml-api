@@ -42,12 +42,12 @@ Response:
 
 ```json
 { "label": "negative", "score": 0.629 }
-
+```
 Note: the current model is a lightweight scikit-learn classifier trained
 on a proxy dataset (not true sentiment data). Labels/scores illustrate the
 API contract; a production-grade model (Hugging Face Transformers) will be
 introduced in the Docker image.
-```
+
 
 ## Run locally
 
