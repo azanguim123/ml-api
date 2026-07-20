@@ -30,16 +30,23 @@ deployment workflow, step by step:
 
 ### Example
 
+### Example
+
 ```bash
 curl -X POST http://127.0.0.1:8000/predict \
   -H "Content-Type: application/json" \
-  -d '{"text": "I love this!"}'
+  -d '{"text": "The patient is suffering from severe migraines."}'
 ```
 
 Response:
 
 ```json
-{ "label": "positive", "score": 0.99 }
+{ "label": "negative", "score": 0.629 }
+
+Note: the current model is a lightweight scikit-learn classifier trained
+on a proxy dataset (not true sentiment data). Labels/scores illustrate the
+API contract; a production-grade model (Hugging Face Transformers) will be
+introduced in the Docker image.
 ```
 
 ## Run locally
